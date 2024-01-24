@@ -1,5 +1,5 @@
 # console-finances
-https://temiakindele.github.io/Bootstrap-Portfolio/
+https://temiakindele.github.io/console-finances/
 
 ## Description
 An app constructed in JavaScript to analyse data to calculate the following:
