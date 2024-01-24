@@ -98,46 +98,46 @@ let averagesArray = [];;  // average of changes
 let addAverages = 0;
 let averageChange = 0;
 
-for (let i = 0, length = finances.length; i < length; i++){
+for (let i = 0, length = finances.length; i < length; i++) {
 
-  // Add together profits and losses for entire period
-  profitsAndLosses += finances[i][1];
+    // Add together profits and losses for entire period
+    profitsAndLosses += finances[i][1];
 
-  // Ensure that index is higher than 0
-  if (i > 0){
-  
-  // Store current month, previous month and previous month values in variables
-  let currentMonth = finances[i][0];
-  let currentValue = finances[i][1];
-  let prevValue = finances[i - 1][1];
+    // Ensure that index is higher than 0
+    if (i > 0) {
 
-  // Push monthly averages to an averages array
-  averagesArray.push(currentValue - prevValue);
+        // Store current month, previous month and previous month values in variables
+        let currentMonth = finances[i][0];
+        let currentValue = finances[i][1];
+        let prevValue = finances[i - 1][1];
 
-  // Calculate the current running increase
-  let runningIncrease = currentValue - prevValue;
+        // Push monthly averages to an averages array
+        averagesArray.push(currentValue - prevValue);
 
-  // Compare the current running increase against the previous highest greatest increase and store the highest in the variable greatestIncrease
-  if (greatestIncrease < runningIncrease){
-    greatestIncrease = runningIncrease;
-    greatestIncreaseMonth = currentMonth;
-  }
+        // Calculate the current running increase
+        let runningIncrease = currentValue - prevValue;
 
-  // Calculate the current running decrease
-  let runningDecrease = currentValue - prevValue;
+        // Compare the current running increase against the previous highest greatest increase and store the highest in the variable greatestIncrease
+        if (greatestIncrease < runningIncrease) {
+            greatestIncrease = runningIncrease;
+            greatestIncreaseMonth = currentMonth;
+        }
 
-  // Compare the current running decrease against the previous greatest loss and store the highest in the variable greatestDecrease
-  if (greatestDecrease > runningDecrease){
-    greatestDecrease = runningDecrease;
-    greatestDecreaseMonth = currentMonth;
-  }
+        // Calculate the current running decrease
+        let runningDecrease = currentValue - prevValue;
 
-}
+        // Compare the current running decrease against the previous greatest loss and store the highest in the variable greatestDecrease
+        if (greatestDecrease > runningDecrease) {
+            greatestDecrease = runningDecrease;
+            greatestDecreaseMonth = currentMonth;
+        }
+
+    }
 }
 
 // Add together all averages stored within averagesArray
-for (let j = 0, length = averagesArray.length; j < length; j++){
-  addAverages += averagesArray[j];
+for (let j = 0, length = averagesArray.length; j < length; j++) {
+    addAverages += averagesArray[j];
 }
 
 // Calculate the average and round to nearest 100th
